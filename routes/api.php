@@ -7,7 +7,7 @@ Route::controller(App\Http\Controllers\API\AuthController::class)->group(functio
     Route::get('/logout', 'logout');
 });
 
-// Route::middleware(['auth:sanctum'])->group(function () {
+Route::middleware(['auth:sanctum'])->group(function () {
     Route::prefix('/products')->controller(\App\Http\Controllers\API\ProductsController::class)->group(function () {
         Route::get('/', 'index')->name('products.index');
         Route::get('/{id}', 'single')->name('products.single');
@@ -16,4 +16,4 @@ Route::controller(App\Http\Controllers\API\AuthController::class)->group(functio
         Route::patch('/status/{product}', 'status')->name('products.status');
         Route::delete("/destroy/{product}", "destroy")->name('products.destroy');
     });
-// });
+});
