@@ -33,27 +33,19 @@ php artisan migrate --seed
 Assumptions Made
 
 The application uses Laravel Sanctum for API authentication.
-
 The product model supports multiple categories via a pivot table.
-
 Filters are applied via query parameters.
-
 Default database is MySQL.
 
 
 Time Spent on the Task
 
 Database Migrations & Models: ~1 hour
-
 API Development & Authentication: ~2 hours
-
 Filtering & Relationships: ~1.5 hours
-
 Testing & Debugging: ~1 hour
-
-Documentation & Cleanup: ~0.5 hour
-
-Total: ~6 hours
+Documentation & Cleanup: ~1.5 hour
+Total: ~7 - 8 hours
 
 
 
