@@ -5,7 +5,7 @@ Ensure you have the following installed on your system:
 - Composer
 - MySQL
 - Laravel 11+
-- Node.js (if needed for frontend integration)
+
 Installation
 Clone the repository:
 ```sh
