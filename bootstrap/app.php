@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Application;
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -22,4 +23,14 @@ return Application::configure(basePath: dirname(__DIR__))
             'locale' => \App\Http\Middleware\Localization::class
         ]);
     })
-    ->withExceptions(function (Exceptions $exceptions) {})->create();
+    ->withExceptions(function (Exceptions $exceptions) {
+        $exceptions->renderable(function (AuthenticationException $e, Request $request) {
+            return response()->json([
+                'success' => false,
+                'message' => trans('Unauthenticated'),
+                'exception' => get_class($e),
+                'file' => $e->getFile(),
+                'line' => $e->getLine(),
+            ], 401);
+        });
+    })->create();
