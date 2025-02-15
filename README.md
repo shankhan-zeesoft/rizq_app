@@ -9,8 +9,8 @@ Ensure you have the following installed on your system:
 Installation
 Clone the repository:
 ```sh
-git clone https://github.com/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/rizq_app.git
+cd rizq_app
 ```
 Install dependencies:
 ```sh
