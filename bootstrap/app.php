@@ -33,4 +33,14 @@ return Application::configure(basePath: dirname(__DIR__))
                 'line' => $e->getLine(),
             ], 401);
         });
+
+        $exceptions->renderable(function (NotFoundHttpException $e, Request $request) {
+            return response()->json([
+                'success' => false,
+                'message' => trans('Not Found'),
+                'exception' => get_class($e),
+                'file' => $e->getFile(),
+                'line' => $e->getLine(),
+            ], 404);
+        });
     })->create();
