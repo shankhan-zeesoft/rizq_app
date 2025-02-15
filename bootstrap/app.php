@@ -43,4 +43,14 @@ return Application::configure(basePath: dirname(__DIR__))
                 'line' => $e->getLine(),
             ], 404);
         });
+
+        $exceptions->renderable(function (Throwable $e, Request $request) {
+            return response()->json([
+                'success' => false,
+                'message' => trans('Internal Server Error'),
+                'exception' => get_class($e),
+                'file' => $e->getFile(),
+                'line' => $e->getLine(),
+            ], 500);
+        });
     })->create();
