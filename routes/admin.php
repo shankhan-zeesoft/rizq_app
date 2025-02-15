@@ -21,11 +21,11 @@ Route::middleware(['auth'])->group(function () {
         Route::post("/destroy", "destroy")->name('categories.destroy');
     });
 
-    Route::prefix('/products')->controller(\App\Http\Controllers\Admin\ProductsController::class)->group(function () {
-        Route::get('/', 'index')->name('products.index');
-        Route::any('/create', 'create')->name('products.create');
-        // Route::post('/store', 'store')->name('products.store');
-        Route::post('/status', 'status')->name('products.status');
-        // Route::post("/destroy", "destroy")->name('products.destroy');
+    Route::prefix('/product')->controller(\App\Http\Controllers\Admin\ProductsController::class)->group(function () {
+        Route::get('/', 'index')->name('product.index');
+        Route::any('/create', 'create')->name('product.create');
+        Route::post('/store', 'store')->name('product.store');
+        Route::post('/status', 'status')->name('product.status');
+        Route::post("/destroy", "destroy")->name('product.destroy');
     });
 });

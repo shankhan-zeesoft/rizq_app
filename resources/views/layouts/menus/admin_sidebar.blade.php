@@ -51,7 +51,7 @@
                                 <a href="{{ route('categories.index') }}" class="nav-link">@lang('admin.categories')</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('products.index') }}" class="nav-link">@lang('admin.Products')</a>
+                                <a href="{{ route('product.index') }}" class="nav-link">@lang('admin.Products')</a>
                             </li>
                         </ul>
                     </div>

@@ -103,7 +103,7 @@
             var form_data = new FormData(this);
             loading();
             $.ajax({
-                url: "{{ route('products.store') }}",
+                url: "{{ route('product.store') }}",
                 data: form_data,
                 contentType: false,
                 processData: false,

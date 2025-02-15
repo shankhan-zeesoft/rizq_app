@@ -4,9 +4,9 @@
             processing: true,
             serverSide: true,
             dom: 'lBfrtip',
-            // ajax: "{{ route('products.index') }}",
+            // ajax: "{{ route('product.index') }}",
             ajax: {
-                url: "{{ route('products.index') }}",
+                url: "{{ route('product.index') }}",
                 type: 'GET',
                 data: function(d) {
                     d.category_id = $('#category_id').val();
@@ -135,7 +135,7 @@
     function status(id) {
         loading();
         $.ajax({
-                url: "{{ route('products.status') }}",
+                url: "{{ route('product.status') }}",
                 type: 'post',
                 dataType: 'json',
                 data: {
@@ -159,7 +159,7 @@
         if (confirm("{{ trans('Are_you_sure_to_delete') }}")) {
             loading();
             $.ajax({
-                    url: "{{ route('products.destroy') }}",
+                    url: "{{ route('product.destroy') }}",
                     type: 'post',
                     dataType: 'json',
                     data: {
@@ -186,7 +186,7 @@
         loading();
         $('#modal_add').modal('show');
         $.ajax({
-                url: "{{ route('products.create') }}",
+                url: "{{ route('product.create') }}",
                 type: 'post',
                 // dataType: 'json',
                 data: {
@@ -210,7 +210,7 @@
         loading();
         $('#modal_add').modal('show');
         $.ajax({
-                url: "{{ route('products.create') }}",
+                url: "{{ route('product.create') }}",
                 type: 'post',
                 // dataType: 'json',
                 data: {
