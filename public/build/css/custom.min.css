@@ -1,0 +1,87 @@
+.dt-buttons {
+    display: none;
+}
+
+.dataTables_filter {
+    display: none;
+}
+
+/* .dataTables_wrapper .dataTables_processing {
+    z-index: 99999;
+    background: white;
+    border: 1px solid black;
+    border-radius: 3px;
+} */
+
+.overlay {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner-image {
+    width: 70px;
+    /* Adjust as needed */
+    height: 70px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media print {
+    body {
+        background-color: white;
+    }
+
+    .bottom-div {
+        position: fixed;
+        bottom: 0;
+        text-align: center;
+        width: 100%;
+        /* margin-bottom: 25px; */
+    }
+}
+
+.vibrate {
+    display: inline-block;
+}
+
+@keyframes vibrate {
+    0% {
+        transform: scale(1) translateX(0);
+    }
+
+    /* Icon at normal size */
+    25% {
+        transform: scale(1.2) translateX(-2px);
+    }
+
+    /* Slightly larger and moves left */
+    50% {
+        transform: scale(1.2) translateX(2px);
+    }
+
+    /* Slightly larger and moves right */
+    75% {
+        transform: scale(1.2) translateX(-2px);
+    }
+
+    /* Slightly larger and moves left */
+    100% {
+        transform: scale(1) translateX(0);
+    }
+
+    /* Back to normal size */
+}
+
+.vibrate.animate {
+    animation: vibrate 0.3s ease-in-out;
+}
